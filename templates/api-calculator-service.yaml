@@ -1,17 +1,18 @@
+{{ $namespace := .Release.Name }}
 apiVersion: v1
 kind: Service
 metadata:
   creationTimestamp: null
   labels:
-    app: api-calculator-clusterip
-  name: api-calculator-clusterip
+    app: {{ print $namespace "-api-clusterip" }}
+  name: {{ print $namespace "-api-clusterip" }}
 spec:
   ports:
   - port: 80
     protocol: TCP
     targetPort: 8080
   selector:
-    app: calculator-api
+    app: {{ print $namespace "-api" }}
   type: ClusterIP
 status:
   loadBalancer: {}

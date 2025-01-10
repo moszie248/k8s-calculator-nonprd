@@ -1,27 +1,28 @@
+{{ $namespace := .Release.Name }}
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   creationTimestamp: null
   labels:
-    app: calculator-api
-  name: calculator-api
+    app: {{ print $namespace "-api" }}
+  name: {{ print $namespace "-api" }}
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: calculator-api
+      app: {{ print $namespace "-api" }}
   strategy: {}
   template:
     metadata:
       creationTimestamp: null
       labels:
-        app: calculator-api
+        app: {{ print $namespace "-api" }}
     spec:
       # imagePullSecrets:
       # - name: pulldocker
       containers:
       - image: {{ print $.Values.API.Image ":"  $.Values.API.tag }}
-        name: calculator-api
+        name: {{ print $namespace "-api" }}
         resources: {}
         ports:
         - containerPort: 8080

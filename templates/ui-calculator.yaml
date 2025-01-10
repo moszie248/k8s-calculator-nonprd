@@ -1,25 +1,26 @@
+{{ $namespace := .Release.Name }}
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   creationTimestamp: null
   labels:
-    app: ui-calculator
-  name: ui-calculator
+    app: {{ print $namespace "-ui" }}
+  name: {{ print $namespace "-ui" }}
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: ui-calculator
+      app: {{ print $namespace "-ui" }}
   strategy: {}
   template:
     metadata:
       creationTimestamp: null
       labels:
-        app: ui-calculator
+        app: {{ print $namespace "-ui" }}
     spec:
       containers:
-      - image: habor.analytichpxv3.online/kubernetes-workshop/kong-ui:dev
-        name: ui-calculator
+      - image: {{ print $.Values.UI.Image ":"  $.Values.UI.tag }}
+        name: {{ print $namespace "-ui" }}
         resources: {}
         ports:
         - containerPort: 5173

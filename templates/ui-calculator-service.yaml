@@ -3,15 +3,15 @@ kind: Service
 metadata:
   creationTimestamp: null
   labels:
-    app: ui-calculator-service
-  name: ui-calculator-service
+    app: {{ print $namespace "-ui-clusterip" }}
+  name: {{ print $namespace "-ui-clusterip" }}
 spec:
   ports:
   - port: 80
     protocol: TCP
     targetPort: 5173
   selector:
-    app: ui-calculator
+    app: {{ print $namespace "-ui" }}
   type: ClusterIP
 status:
   loadBalancer: {}
