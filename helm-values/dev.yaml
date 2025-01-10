@@ -2,7 +2,7 @@
 ENV: dev
 API:
   Image: "habor.analytichpxv3.online/kubernetes-workshop/kong-api"
-  tag: "dev-fdf6564"
+  tag: "dev-384c045"
   API_KEY: "TEST_DEV"
 UI:
   Image: "habor.analytichpxv3.online/kubernetes-workshop/kong-ui"
