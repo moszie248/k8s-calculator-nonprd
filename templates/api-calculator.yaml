@@ -17,8 +17,8 @@ spec:
       labels:
         app: calculator-api
     spec:
-      imagePullSecrets:
-      - name: pulldocker
+      # imagePullSecrets:
+      # - name: pulldocker
       containers:
       - image: {{ print $.Values.API.Image ":"  $.Values.API.tag }}
         name: calculator-api
