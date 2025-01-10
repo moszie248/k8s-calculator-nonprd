@@ -1,4 +1,5 @@
 
+ENV: dev
 API:
   Image: "habor.analytichpxv3.online/kubernetes-workshop/kong-api"
   tag: "dev-0.0.1"
