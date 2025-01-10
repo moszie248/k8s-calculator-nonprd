@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: ui-calculator
+  name: ui-calculator
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ui-calculator
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: ui-calculator
+    spec:
+      containers:
+      - image: habor.analytichpxv3.online/kubernetes-workshop/kong-ui:dev
+        name: ui-calculator
+        resources: {}
+        ports:
+        - containerPort: 5173
+status: {}

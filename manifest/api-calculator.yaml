@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: calculator-api
+  name: calculator-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: calculator-api
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: calculator-api
+    spec:
+      containers:
+      - image: "habor.analytichpxv3.online/kubernetes-workshop/kong-api:dev-0.0.1"
+        name: calculator-api
+        resources: {}
+        ports:
+        - containerPort: 8080
+        envFrom:
+        - configMapRef:
+            name: app-env
+        - secretRef:
+            name: api-secret
+status: {}
