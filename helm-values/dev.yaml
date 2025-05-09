@@ -2,7 +2,7 @@
 ENV: dev
 API:
   Image: "habor.analytichpxv3.online/kubernetes-workshop/moss-api"
-  tag: "dev-305b8ed"
+  tag: "dev-5429a2e"
   API_KEY: "TEST_DEV"
 UI:
   Image: "habor.analytichpxv3.online/kubernetes-workshop/moss-ui"
