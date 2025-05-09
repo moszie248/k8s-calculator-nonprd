@@ -1,8 +1,8 @@
 ENV: uat
 API:
-  Image: "habor.analytichpxv3.online/kubernetes-workshop/kong-api"
+  Image: "habor.analytichpxv3.online/kubernetes-workshop/moss-api"
   tag: "uat-faeec67"
   API_KEY: "TEST_UAT"
 UI:
-  Image: "habor.analytichpxv3.online/kubernetes-workshop/kong-ui"
+  Image: "habor.analytichpxv3.online/kubernetes-workshop/moss-ui"
   tag: "dev"
